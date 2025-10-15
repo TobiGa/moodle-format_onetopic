@@ -40,7 +40,7 @@ if (!empty($tabstyles)) {
 
     if (is_object($tabstyles)) {
 
-        $precedence = ['default', 'childs', 'childindex', 'active', 'parent', 'highlighted', 'disabled', 'hover'];
+        $precedence = ['default', 'childs', 'childslistelement', 'childindex', 'active', 'parent', 'highlighted', 'disabled', 'hover'];
 
         $orderedtabs = new \stdClass();
         foreach ($precedence as $type) {
@@ -86,6 +86,9 @@ if (!empty($tabstyles)) {
                 break;
                 case 'childs':
                     $csscontent .= '#tabs-tree-start .onetopic-tab-body .nav-tabs .nav-item.subtopic a.nav-link';
+                break;
+                case 'childslistelement':
+                    $csscontent .= '#tabs-tree-start .onetopic-tab-body .nav-tabs .nav-item.subtopic';
                 break;
                 case 'childindex':
                     $csscontent .= '#tabs-tree-start .onetopic-tab-body .nav-tabs' .

@@ -111,23 +111,29 @@ class format_onetopic_tabstyles_form_element extends MoodleQuickForm_textarea {
         $childtab = new \format_onetopic\singletab(5, $title, '#', $title);
         $childtab->specialclass = 'tpl-tabchild';
         $tab->add_child($childtab);
+
+        // Default childs list element tab.
+        $title = get_string('tablabeldefault', 'format_onetopic', '3.3');
+        $childslistelementtab = new \format_onetopic\singletab(6, $title, '#', $title);
+        $childslistelementtab->specialclass = 'tpl-tabchildslistelement';
+        $childtab->add_child($childslistelementtab);
         $tabs->add($tab);
 
         // Higlighted tab.
         $title = get_string('tablabelhighlighted', 'format_onetopic');
-        $tab = new \format_onetopic\singletab(6, $title, '#', $title);
+        $tab = new \format_onetopic\singletab(7, $title, '#', $title);
         $tab->specialclass = 'marker tpl-tabhighlighted';
         $tabs->add($tab);
 
         // Disabled tab.
         $title = get_string('tablabeldisabled', 'format_onetopic');
-        $tab = new \format_onetopic\singletab(7, $title, '#', $title);
+        $tab = new \format_onetopic\singletab(8, $title, '#', $title);
         $tab->specialclass = 'dimmed disabled tpl-tabdisabled';
         $tabs->add($tab);
 
         // Other default child tab.
         $title = get_string('tablabeldefault', 'format_onetopic', '5');
-        $tab = new \format_onetopic\singletab(8, $title, '#', $title);
+        $tab = new \format_onetopic\singletab(9, $title, '#', $title);
         $tab->specialclass = 'tpl-tabdefault';
         $tabs->add($tab);
 

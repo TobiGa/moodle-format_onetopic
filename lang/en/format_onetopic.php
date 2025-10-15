@@ -171,6 +171,7 @@ $string['tabstyleserrorjsoninvalid'] = 'Invalid JSON format';
 $string['tabstylesetactive'] = 'Set Active';
 $string['tabstylesetchildindex'] = 'Set Child index';
 $string['tabstylesetchilds'] = 'Set Childs';
+$string['tabstylesetchildslistelement'] = 'Set Childs (List element)';
 $string['tabstylesetdefault'] = 'Set Default';
 $string['tabstylesetdisabled'] = 'Set Disabled';
 $string['tabstylesethighlighted'] = 'Set Highlighted';

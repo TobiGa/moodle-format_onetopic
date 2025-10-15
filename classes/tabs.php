@@ -137,6 +137,11 @@ class tabs {
                                 continue 2;
                             }
                             break;
+                        case 'childslistelement':
+                            if (!$assubtabs) {
+                                continue 2;
+                            }
+                            break;
                         case 'childindex':
                             if (!$assubtabs) {
                                 continue 2;
@@ -172,7 +177,9 @@ class tabs {
                     }
                 }
 
-                $iconorder = ['parent', 'highlighted', 'disabled', 'childs', 'childindex', 'active', 'default', 'hover'];
+                $iconorder = [
+                    'parent', 'highlighted', 'disabled', 'childs', 'childslistelement', 'childindex', 'active', 'default', 'hover',
+                ];
 
                 $orderedicons = [];
                 foreach ($iconorder as $state) {

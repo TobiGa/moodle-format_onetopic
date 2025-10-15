@@ -230,7 +230,7 @@ class header implements \renderable, \templatable {
         $selectedparent = null;
         $parenttab = null;
         $firstsection = ($course->realcoursedisplay == COURSE_DISPLAY_MULTIPAGE) ? 1 : 0;
-        $precedence = ['default', 'childs', 'childindex', 'active', 'parent', 'highlighted', 'disabled', 'hover'];
+        $precedence = ['default', 'childs', 'childslistelement', 'childindex', 'active', 'parent', 'highlighted', 'disabled', 'hover'];
 
         while ($localsection < $numsections) {
             $inactivetab = false;
@@ -317,6 +317,10 @@ class header implements \renderable, \templatable {
                                 case 'childs':
                                     $onecss .= '#tabs-tree-start .onetopic-tab-body' . $cssparentid
                                                 . ' .nav-item.subtopic a.nav-link';
+                                break;
+                                case 'childslistelement':
+                                    $onecss .= '#tabs-tree-start .onetopic-tab-body' . $cssparentid
+                                                . ' .nav-item.subtopic';
                                 break;
                                 case 'childindex':
                                     $onecss .= '#tabs-tree-start .onetopic-tab-body' . $cssparentid . ' .nav-tabs' .

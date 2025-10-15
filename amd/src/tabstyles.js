@@ -75,6 +75,14 @@ export const init = () => {
         $tabicon.append('<span class="tabicon-hover hidden"></span>');
     });
 
+    $('#onetopic-tabstyles .tpl-tabchildslistelement .tabicon').each(function() {
+        var $tabicon = $(this);
+        $tabicon.append('<span class="tabicon-childslistelement hidden"></span>');
+        $tabicon.append('<span class="tabicon-childs hidden"></span>');
+        $tabicon.append('<span class="tabicon-default hidden"></span>');
+        $tabicon.append('<span class="tabicon-hover hidden"></span>');
+    });
+
     $('#onetopic-tabstyles .tpl-tabhighlighted .tabicon').each(function() {
         var $tabicon = $(this);
         $tabicon.append('<span class="tabicon-highlighted hidden"></span>');
@@ -177,7 +185,7 @@ export const init = () => {
         modal.hide();
     });
 
-    var types = ['default', 'active', 'parent', 'highlighted', 'disabled', 'hover', 'childs', 'childindex'];
+    var types = ['default', 'active', 'parent', 'highlighted', 'disabled', 'hover', 'childs', 'childslistelement', 'childindex'];
     types.forEach(type => {
         $('#onetopic-tabstyles #tabstyleset' + type).on('click', function(e) {
             e.preventDefault();
@@ -320,6 +328,9 @@ var applyStyles = function() {
             break;
             case 'childs':
                 csscontent += '#onetopic-tabstyles .onetopic-tab-body .nav-tabs .nav-item.subtopic a.nav-link';
+            break;
+            case 'childslistelement':
+                csscontent += '#onetopic-tabstyles .onetopic-tab-body .nav-tabs .nav-item.subsubtopic a.nav-link';
             break;
             case 'childindex':
                 csscontent += '#onetopic-tabstyles .onetopic-tab-body .nav-tabs .nav-item.subtopic.tab_initial a.nav-link';

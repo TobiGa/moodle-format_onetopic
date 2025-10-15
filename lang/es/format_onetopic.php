@@ -141,6 +141,7 @@ $string['tabstyleserrorjsoninvalid'] = 'Formato JSON no válido';
 $string['tabstylesetactive'] = 'Activa';
 $string['tabstylesetchildindex'] = 'Hija índice';
 $string['tabstylesetchilds'] = 'Hijas';
+$string['tabstylesetchildslistelement'] = 'Hijas (elemento de lista)';
 $string['tabstylesetdefault'] = 'Por defecto';
 $string['tabstylesetdisabled'] = 'Deshabilitada';
 $string['tabstylesethighlighted'] = 'Destacada';
