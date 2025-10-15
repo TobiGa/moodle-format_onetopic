@@ -178,7 +178,8 @@ class tabs {
                 }
 
                 $iconorder = [
-                    'parent', 'highlighted', 'disabled', 'childs', 'childslistelement', 'childindex', 'active', 'default', 'hover',
+                    'parent', 'highlighted', 'disabled', 'childs', 'childslistelement', 'childindex',
+                    'active', 'default', 'hover',
                 ];
 
                 $orderedicons = [];

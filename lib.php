@@ -738,6 +738,15 @@ class format_onetopic extends core_courseformat\base {
 
                 $elements[] = $element;
 
+                $mform->removeElement('tabbackground');
+                MoodleQuickForm::registerElementType('tabbackground',
+                                            $CFG->dirroot . '/course/format/onetopic/classes/local/formelement_background.php',
+                                            'format_onetopic_background_form_element');
+                $element = $mform->addElement('tabbackground', 'tabbackground',
+                                                get_string('tabbackground', 'format_onetopic'));
+
+                $elements[] = $element;
+
                 if (empty($onetopicconfig->useoldstylescontrol)) {
                     $mform->removeElement('tabstyles');
                     MoodleQuickForm::registerElementType('tabstyles',
@@ -845,6 +854,11 @@ class format_onetopic extends core_courseformat\base {
                     'type' => PARAM_RAW,
                 ];
 
+                $sectionformatoptions['tabbackground'] = [
+                    'default' => '',
+                    'type' => PARAM_RAW,
+                ];
+
                 if ($onetopicconfig->useoldstylescontrol) {
                     $sectionformatoptions['fontcolor'] = [
                         'default' => '',
@@ -902,6 +916,15 @@ class format_onetopic extends core_courseformat\base {
                     'label' => new lang_string('tabsectionbackground', 'format_onetopic'),
                     'element_type' => 'text',
                     'help' => 'tabsectionbackground',
+                    'help_component' => 'format_onetopic',
+                ];
+
+                $sectionformatoptionsedit['tabbackground'] = [
+                    'default' => '',
+                    'type' => PARAM_RAW,
+                    'label' => new lang_string('tabbackground', 'format_onetopic'),
+                    'element_type' => 'text',
+                    'help' => 'tabbackground',
                     'help_component' => 'format_onetopic',
                 ];
 

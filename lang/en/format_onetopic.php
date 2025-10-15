@@ -150,6 +150,9 @@ $string['settingsheaderdefault'] = 'Default course settings';
 $string['settingsheaderstyles'] = 'Default tabs styles';
 $string['showfromothers'] = 'Show topic';
 $string['subtopictoright'] = 'Move to right as subtopic';
+$string['tabbackground'] = 'Section body background';
+$string['tabbackground_help'] = 'Used to change the background of the section body. The value can be a color in a CSS valid representation, for example: <ul><li>Hexadecimal: #ffffff</li><li>RGB: rgb(0,255,0)</li><li>Name: green</li></ul>
+It can also be a URL attribute and other CSS background options.';
 $string['tabicon'] = 'Icon';
 $string['tabiconremove'] = 'Remove icon';
 $string['tabiconselect'] = 'Select icon';

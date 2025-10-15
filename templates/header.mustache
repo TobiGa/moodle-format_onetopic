@@ -92,6 +92,11 @@
                 {{{cssstyles}}}
             </style>
         {{/cssstyles}}
+        {{#tabbackgroundcss}}
+            <style type="text/css">
+                {{{tabbackgroundcss}}}
+            </style>
+        {{/tabbackgroundcss}}
 
         {{#hastopictabs}}
             <div class="tabs-wrapper">
@@ -115,7 +120,6 @@
                 <div class="onetopic-tab-body-secondrow{{#subtabsectionbackground}} onetopic-withsubsectionbg{{/subtabsectionbackground}}"
                     {{#subtabsectionbackground}}style="{{subtabsectionbackground}}"{{/subtabsectionbackground}}>
             {{/hassecondrow}}
-
 
             <div class="hack-element-not-used">{{! Used in order to break the div wraped in output.course_content_header }}
 

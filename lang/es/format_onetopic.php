@@ -120,6 +120,9 @@ $string['settingsheaderdefault'] = 'Configuración por defecto del curso';
 $string['settingsheaderstyles'] = 'Estilos predeterminados de las pestañas';
 $string['showfromothers'] = 'Mostrar tema';
 $string['subtopictoright'] = 'Mover a la derecha como pestaña hija';
+$string['tabbackground'] = 'Fondo del cuerpo de la sección';
+$string['tabbackground_help'] = 'Se utiliza para cambiar el fondo del cuerpo de la sección. El valor puede ser un color en una representación válida de CSS, por ejemplo: <ul><li>Hexadecimal: #ffffff</li><li>RGB: rgb(0,255,0)</li><li>Nombre: verde</li></ul>
+También puede ser un atributo de URL y otras opciones de fondo de CSS.';
 $string['tabicon'] = 'Icono';
 $string['tabiconremove'] = 'Quitar icono';
 $string['tabiconselect'] = 'Seleccionar icono';

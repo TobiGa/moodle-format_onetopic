@@ -116,20 +116,34 @@ class header implements \renderable, \templatable {
 
         $tabsectionbackground = '';
         $subtabsectionbackground = '';
+        $tabbackgroundcss = '';
         if ($activetab) {
             $formatoptions = course_get_format($course)->get_format_options($activetab->section);
             $tabsectionbackground = $formatoptions['tabsectionbackground'] ?? '';
+            $tabbackground = $formatoptions['tabbackground'] ?? '';
             $subtabsectionbackground = '';
+            $subtabbackground = '';
 
             // If the tabsectionbackground is not defined in the section check the parent section.
             if ($currentsection != $activetab->section) {
                 $formatoptionssub = course_get_format($course)->get_format_options($currentsection);
                 $subtabsectionbackground = $formatoptionssub['tabsectionbackground'] ?? '';
+                $subtabbackground = $formatoptionssub['tabbackground'] ?? '';
 
                 if (!empty($subtabsectionbackground)) {
                     $subtabsectionbackground = clean_param($subtabsectionbackground, PARAM_NOTAGS);
                     $subtabsectionbackground = 'background: ' . $subtabsectionbackground . ';';
                 }
+
+                if (!empty($subtabbackground)) {
+                    $subtabbackground = clean_param($subtabbackground, PARAM_NOTAGS);
+                    $tabbackgroundcss .= 'body, #page { background: ' . $subtabbackground . '; }';
+                }
+            }
+
+            if (!empty($tabbackground) && empty($subtabbackground)) {
+                $tabbackground = clean_param($tabbackground, PARAM_NOTAGS);
+                $tabbackgroundcss .= 'body, #page { background: ' . $tabbackground . '; }';
             }
         }
 
@@ -159,6 +173,7 @@ class header implements \renderable, \templatable {
             'cssstyles' => $tabscssstyles,
             'tabsectionbackground' => $tabsectionbackground,
             'subtabsectionbackground' => $subtabsectionbackground,
+            'tabbackgroundcss' => $tabbackgroundcss,
         ];
 
         $initialsection = null;
@@ -174,7 +189,6 @@ class header implements \renderable, \templatable {
 
             $sectionoutput = new \format_onetopic\output\renderer($PAGE, null);
             $initialsection = $section->export_for_template($sectionoutput);
-
         }
 
         $data->initialsection = $initialsection;
@@ -230,7 +244,8 @@ class header implements \renderable, \templatable {
         $selectedparent = null;
         $parenttab = null;
         $firstsection = ($course->realcoursedisplay == COURSE_DISPLAY_MULTIPAGE) ? 1 : 0;
-        $precedence = ['default', 'childs', 'childslistelement', 'childindex', 'active', 'parent', 'highlighted', 'disabled', 'hover'];
+        $precedence = ['default', 'childs', 'childslistelement', 'childindex', 'active', 'parent',
+                       'highlighted', 'disabled', 'hover'];
 
         while ($localsection < $numsections) {
             $inactivetab = false;
@@ -255,7 +270,7 @@ class header implements \renderable, \templatable {
             $title = $sectionname;
 
             if (!$thissection->visible || !$thissection->available) {
-                $title .= ': '. get_string('hiddenfromstudents');
+                $title .= ': ' . get_string('hiddenfromstudents');
             }
 
             $tabicons = [];

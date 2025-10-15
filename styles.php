@@ -40,7 +40,8 @@ if (!empty($tabstyles)) {
 
     if (is_object($tabstyles)) {
 
-        $precedence = ['default', 'childs', 'childslistelement', 'childindex', 'active', 'parent', 'highlighted', 'disabled', 'hover'];
+        $precedence = ['default', 'childs', 'childslistelement', 'childindex', 'active', 'parent',
+                       'highlighted', 'disabled', 'hover'];
 
         $orderedtabs = new \stdClass();
         foreach ($precedence as $type) {
